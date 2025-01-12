@@ -13,6 +13,9 @@ contract DeployMoodNftTest is Test {
     }
 
     function testConvertSvgToUri() public {
-        
+        string memory expectedUri = "";
+        string memory svg = "";
+        string memory actualUri = deployer.svgToImageUri(svg);
+        assert(keccak256(abi.encodePacked(actualUri)) == keccak256(abi.encodePacked(expectedUri)));
     }
 }
